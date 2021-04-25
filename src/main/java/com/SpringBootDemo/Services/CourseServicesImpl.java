@@ -14,6 +14,9 @@ import java.util.List;
 @Service
 public class CourseServicesImpl implements CourseServices
 {
+    /**
+     * Creating a course list
+     */
     List<Courses> coursesList;
     CourseServicesImpl()
     {
@@ -26,12 +29,21 @@ public class CourseServicesImpl implements CourseServices
                 "Appium course"));
     }
 
+    /**
+     * Get all courses
+     * @return list of all courses
+     */
     @Override
     public List<Courses> getAllCourses()
      {
         return coursesList;
      }
 
+    /**
+     * Get a single course
+     * @param courseId
+     * @return a course with given id
+     */
     @Override
     public Courses getCourse(int courseId)
     {
@@ -47,6 +59,11 @@ public class CourseServicesImpl implements CourseServices
         return courseObj;
     }
 
+    /**
+     * Add a new course to the course list
+     * @param course
+     * @return updated course list
+     */
     @Override
     public Courses addCourse(Courses course)
     {
@@ -54,6 +71,11 @@ public class CourseServicesImpl implements CourseServices
         return course;
     }
 
+    /**
+     * Delete the course with id
+     * @param courseId
+     * @return updated course list
+     */
     @Override
     public List<Courses> deleteCourse(int courseId)
     {
