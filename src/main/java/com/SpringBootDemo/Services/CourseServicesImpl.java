@@ -35,16 +35,16 @@ public class CourseServicesImpl implements CourseServices
     @Override
     public Courses getCourse(int courseId)
     {
-        Courses course_Id = null;
+        Courses courseObj = null;
         for(Courses it: coursesList)
         {
             if(it.getId() == courseId)
             {
-                course_Id = it;
+                courseObj = it;
                 break;
             }
         }
-        return course_Id;
+        return courseObj;
     }
 
     @Override
@@ -52,6 +52,22 @@ public class CourseServicesImpl implements CourseServices
     {
         coursesList.add(course);
         return course;
+    }
+
+    @Override
+    public List<Courses> deleteCourse(int courseId)
+    {
+        Courses coursesObj = null;
+
+        for(Courses it: coursesList)
+        {
+            if(it.getId() == courseId)
+            {
+                coursesList.remove(courseId -1);
+                break;
+            }
+        }
+        return coursesList;
     }
 
 

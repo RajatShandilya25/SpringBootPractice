@@ -19,21 +19,27 @@ public class CoursesController
     private CourseServices courseServices;
 
     @GetMapping("/courses")
-    public List<Courses> getCourses()
+    public List<Courses> get_Courses()
     {
         return this.courseServices.getAllCourses();
     }
 
     @GetMapping("/courses/{courseId}")
-    public Courses getCourse(@PathVariable int courseId)
+    public Courses get_Course(@PathVariable int courseId)
     {
         return this.courseServices.getCourse(courseId);
     }
 
     @PostMapping("/courses")
-    public Courses addCourse(@RequestBody Courses course)
+    public Courses add_Course(@RequestBody Courses course)
     {
         return this.courseServices.addCourse(course);
+    }
+
+    @DeleteMapping("/courses/{courseId}")
+    public List<Courses> delete_Cousre(@PathVariable int courseId)
+    {
+        return this.courseServices.deleteCourse(courseId);
     }
 
 

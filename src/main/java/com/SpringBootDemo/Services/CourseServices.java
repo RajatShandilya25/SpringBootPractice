@@ -12,4 +12,5 @@ public interface CourseServices
      public List<Courses> getAllCourses();
      public Courses getCourse(int courseId);
      public Courses addCourse(Courses course);
+     public List<Courses> deleteCourse(int id);
 }
