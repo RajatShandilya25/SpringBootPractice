@@ -6,11 +6,11 @@ package com.SpringBootDemo.Entities;
  */
 public class Courses
 {
-    private long id;
+    private int id;
     private String title;
     private String description;
 
-    public Courses(long Id, String Title, String Description)
+    public Courses(int Id, String Title, String Description)
     {
         this.id = Id;
         this.title = Title;
@@ -22,7 +22,7 @@ public class Courses
         return id;
     }
 
-    public void setId(long id)
+    public void setId(int id)
     {
         this.id = id;
     }

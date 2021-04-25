@@ -10,4 +10,6 @@ import java.util.List;
 public interface CourseServices
 {
      public List<Courses> getAllCourses();
+     public Courses getCourse(int courseId);
+     public Courses addCourse(Courses course);
 }

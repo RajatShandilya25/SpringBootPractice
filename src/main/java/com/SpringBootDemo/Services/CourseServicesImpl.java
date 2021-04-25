@@ -22,6 +22,8 @@ public class CourseServicesImpl implements CourseServices
                 "Rest api development using Spring boot"));
         coursesList.add(new Courses(2, "Selenium",
                 "Selenium course"));
+        coursesList.add(new Courses(3, "Appium",
+                "Appium course"));
     }
 
     @Override
@@ -29,4 +31,28 @@ public class CourseServicesImpl implements CourseServices
      {
         return coursesList;
      }
+
+    @Override
+    public Courses getCourse(int courseId)
+    {
+        Courses course_Id = null;
+        for(Courses it: coursesList)
+        {
+            if(it.getId() == courseId)
+            {
+                course_Id = it;
+                break;
+            }
+        }
+        return course_Id;
+    }
+
+    @Override
+    public Courses addCourse(Courses course)
+    {
+        coursesList.add(course);
+        return course;
+    }
+
+
 }

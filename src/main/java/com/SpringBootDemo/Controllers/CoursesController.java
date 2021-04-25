@@ -3,8 +3,7 @@ package com.SpringBootDemo.Controllers;
 import com.SpringBootDemo.Entities.Courses;
 import com.SpringBootDemo.Services.CourseServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +15,6 @@ import java.util.List;
 @RestController
 public class CoursesController
 {
-
     @Autowired
     private CourseServices courseServices;
 
@@ -24,6 +22,18 @@ public class CoursesController
     public List<Courses> getCourses()
     {
         return this.courseServices.getAllCourses();
+    }
+
+    @GetMapping("/courses/{courseId}")
+    public Courses getCourse(@PathVariable int courseId)
+    {
+        return this.courseServices.getCourse(courseId);
+    }
+
+    @PostMapping("/courses")
+    public Courses addCourse(@RequestBody Courses course)
+    {
+        return this.courseServices.addCourse(course);
     }
 
 
